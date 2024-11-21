@@ -1,5 +1,6 @@
 ﻿@page "/"
 @rendermode InteractiveServer
+
 @using OpenAI.RealtimeConversation
 @inject RealtimeConversationClient client
 
@@ -124,6 +125,7 @@ Welcome to your new app.
     private void LogMessage(string message)
     {
         messages.Add(message);
-        StateHasChanged(); // Update the UI to reflect the new messages
+        // Update the UI to reflect the new messages
+        // StateHasChanged();
     }
 }

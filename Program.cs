@@ -38,15 +38,16 @@ app.Run();
 
 static RealtimeConversationClient GetConfiguredClient()
 {
-    string? aoaiEndpoint = "https://myaiserviceluis.openai.azure.com/";
-    //string? aoaiEndpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT");
-    string? aoaiUseEntra = Environment.GetEnvironmentVariable("AZURE_OPENAI_USE_ENTRA");
-    //string? aoaiDeployment = Environment.GetEnvironmentVariable("AZURE_OPENAI_DEPLOYMENT");
-    string? aoaiDeployment = "gpt-4o-realtime-preview";
-    //string? aoaiApiKey = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY");
-    string? aoaiApiKey = "AZURE_OPENAI_API_KEY";
+    //Configuration for AzureOpenAI
+    string? aoaiEndpoint = null;
+    string? aoaiUseEntra = null;
+    string? aoaiDeployment = null;
+    string? aoaiApiKey = null;
+
+    //Configuration for OpenAI
     //string? oaiApiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
     string? oaiApiKey = "OPENAI_API_KEY";
+
 
     if (aoaiEndpoint is not null && bool.TryParse(aoaiUseEntra, out bool useEntra) && useEntra)
     {
